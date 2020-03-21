@@ -4,7 +4,7 @@
 using System;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Experimental.LowLevel;
+// using UnityEngine.Experimental.LowLevel;
 using UniRx.Async.Internal;
 using System.Threading;
 
@@ -57,7 +57,7 @@ namespace UniRx.Async
         static ContinuationQueue[] yielders;
         static PlayerLoopRunner[] runners;
 
-        static PlayerLoopSystem[] InsertRunner(PlayerLoopSystem loopSystem, Type loopRunnerYieldType, ContinuationQueue cq, Type loopRunnerType, PlayerLoopRunner runner)
+        /*static PlayerLoopSystem[] InsertRunner(PlayerLoopSystem loopSystem, Type loopRunnerYieldType, ContinuationQueue cq, Type loopRunnerType, PlayerLoopRunner runner)
         {
             var yieldLoop = new PlayerLoopSystem
             {
@@ -76,9 +76,9 @@ namespace UniRx.Async
             dest[0] = yieldLoop;
             dest[1] = runnerLoop;
             return dest;
-        }
+        }*/
 
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        /*[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         static void Init()
         {
             // capture default(unity) sync-context.
@@ -89,9 +89,9 @@ namespace UniRx.Async
 
             var playerLoop = PlayerLoop.GetDefaultPlayerLoop();
             Initialize(ref playerLoop);
-        }
+        }*/
 
-        public static void Initialize(ref PlayerLoopSystem playerLoop)
+        /*public static void Initialize(ref PlayerLoopSystem playerLoop)
         {
             yielders = new ContinuationQueue[7];
             runners = new PlayerLoopRunner[7];
@@ -108,7 +108,7 @@ namespace UniRx.Async
 
             playerLoop.subSystemList = copyList;
             PlayerLoop.SetPlayerLoop(playerLoop);
-        }
+        }*/
 
         public static void AddAction(PlayerLoopTiming timing, IPlayerLoopItem action)
         {
